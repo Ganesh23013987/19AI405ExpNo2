@@ -80,64 +80,10 @@ tdp=dfs(g,st,vi,p)
 print(tdp)
 
 ```
-<h3>Sample Input</h3>
-<hr>
-8 9 <BR>
-A B <BR>
-A C <BR>
-B E <BR>
-C D <BR>
-B D <BR>
-C G <BR>
-D F <BR>
-G F <BR>
-F H <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['A', 'B', 'E', 'D', 'C', 'G', 'F', 'H']
 
-<hr>
+## Output:
+![alt text](<DFS output.png>)
 
-## program:
-```
-from collections import defaultdict
-def dfs(g,s,vi,p):
-    p.append(s)
-    vi[s]=True
-    for ne in g[s]:
-        if vi[ne]==False:
-             dfs(g,ne,vi,p)
-             vi[ne]=True
-    return p
-g=defaultdict(list)
-n,e=map(int,input().split())
-for i in range(e):
-    u,v=map(str,input().split())
-    g[u].append(v)
-    g[v].append(u)
-st=input()
-vi=defaultdict(bool)
-p=[]
-tdp=dfs(g,st,vi,p)
-print(tdp)
-
-```
-<hr>
-<h3>Sample Input</h3>
-<hr>
-5 5 <BR>
-0 1 <BR>
-0 2 <BR>
-0 3 <BR>
-2 3 <BR>
-2 4 <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['0', '1', '2', '3', '4']
-
-<hr>
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
